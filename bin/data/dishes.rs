@@ -22,3 +22,8 @@ foodType = Vegetarian
 cuisine = Western
 ingredients = Bread
 
+[Sandwich]
+name = Sandwich
+foodType = Vegetarian
+cuisine = Western
+ingredients = Bread
