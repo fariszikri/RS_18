@@ -12,6 +12,7 @@ class Game:
         self.dateManager = None
         self.customerManager = None
         self.dishManager = None
+        self.marketing = None
 
         self.players = None
 
@@ -21,6 +22,7 @@ class Game:
         self.dateManager = DateManager(self.evManager)
         self.customerManager = CustomerManager(self.evManager)
         self.dishManager = DishManager(self.evManager)
+        self.marketing = Marketing(self.evManager)
 
         self.players = [Player(self, self.evManager)]
 
@@ -72,6 +74,9 @@ class Player:
 
         self.impression = 80
 
+        self.cash = 0
+        self.restaurantLvl = 0
+        self.restaurantCapacity = 0
         self.menu = Menu(self.evManager)
         self.inventory = Inventory(self.evManager)
         self.chefs = [Chef(CUISINE_WESTERN, 0, self.evManager), Chef(CUISINE_WESTERN, 3, self.evManager),
