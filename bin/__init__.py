@@ -3,11 +3,12 @@ from .Date import *
 from .EventManager import *
 from .Events import *
 from .DateManager import *
-from .View import *
+from .StartingMenu import *
 from .Controller import *
 from .Date import *
 from .CustomerManager import *
 from .DishManager import *
+from .MarketingManager import *
 
 #What can we import from
 

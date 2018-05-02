@@ -22,7 +22,7 @@ class Game:
         self.dateManager = DateManager(self.evManager)
         self.customerManager = CustomerManager(self.evManager)
         self.dishManager = DishManager(self.evManager)
-        self.marketing = Marketing(self.evManager)
+        self.marketing = MarketingManager(self.evManager)
 
         self.players = [Player(self, self.evManager)]
 
@@ -57,6 +57,8 @@ class Game:
 
             DISHES_LIST.append(Dish(name, foodType, cuisine, ingredients, self.evManager))
 
+
+
     def Notify(self, event):
         if isinstance(event, TickEvent):
             if self.state is STATE_PREPARING:
@@ -83,6 +85,7 @@ class Player:
                       Chef(CUISINE_CHINESE, 0, self.evManager), Chef(CUISINE_CHINESE, 3, self.evManager),
                       Chef(CUISINE_INDIAN, 0, self.evManager)]
         self.waiters = [Waiter(self.evManager)]
+        self.marketing = []
 
     def GetChefs(self):
         # Returns highest level of each cuisine chef

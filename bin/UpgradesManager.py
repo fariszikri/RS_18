@@ -14,7 +14,7 @@ class UpgradesManager: #values are called when even is requested
         cost = 40000 * 2.8 * level**2 *(capacity/50)
         return cost
 
-    def UpgradeCapacity(selfcapacity):
+    def UpgradeCapacity(self, capacity):
         newCapacity = capacity * 2
         return newCapacity
 

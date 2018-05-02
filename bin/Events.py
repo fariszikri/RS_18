@@ -72,3 +72,8 @@ class LeftClickEvent:
     def __init__(self, pos):
         self.name = "Left Click Event"
         self.pos = pos
+
+class MarketingBonusExpiredEvent:
+    def __iniit__(self, bonus):
+        self.name = "Bonuses"
+        self.bonus = bonus
