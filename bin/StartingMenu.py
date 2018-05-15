@@ -15,81 +15,94 @@ GREEN = (0, 230, 0)
 BLUE = (0, 0, 255)
 YELLOW = (250, 250, 0)
 
-fontName = 'Comic Sans MS'
-fontSize = 18
+fontName = ''
+fontSize = 30
 
 imgFolder = os.path.join("asset")
 
-class MenuButton1(pygame.sprite.Sprite):
+class StartButton(pygame.sprite.Sprite):
     def __init__(self, group=None, windowGroup=None):
         pygame.sprite.Sprite.__init__(self, group)
-        self.image = pygame.image.load(os.path.join(imgFolder, "StartButton.png")).convert()
+        self.image = pygame.image.load(os.path.join(imgFolder, "Button.png")).convert()
         self.rect = self.image.get_rect()
-        self.rect = (500,350,100,50)
+        self.rect = (500,390,100,50)
 
 
 
 
-        self.text = ""
+        self.text = "START"
         self.font = pygame.font.SysFont(fontName, fontSize)
         self.textSurface = self.font.render(self.text, False, (0, 0, 0))
 
-        self.image.blit(self.textSurface, (80, 15))
+        self.image.blit(self.textSurface, (100, 23))
 
         # This attribute is needed to pass the value to windowGroup
         self.windowGroup = windowGroup
 
     def Clicked(self):
         self.windowGroup.empty()
-        MenuButton1(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
+        StartButton(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
 
 
-class MenuButton2(pygame.sprite.Sprite):
+class LoadButton(pygame.sprite.Sprite):
     def __init__(self, group=None, windowGroup=None):
         pygame.sprite.Sprite.__init__(self, group)
-        self.image = pygame.image.load(os.path.join(imgFolder, "SaveButton.png")).convert()
+        self.image = pygame.image.load(os.path.join(imgFolder, "Button.png")).convert()
         self.rect = self.image.get_rect()
-        self.rect = (500,430,100,50)
+        self.rect = (500,470,100,50)
 
 
 
 
-        self.text = ""
+        self.text = "LOAD"
         self.font = pygame.font.SysFont(fontName, fontSize)
         self.textSurface = self.font.render(self.text, False, (0, 0, 0))
 
-        self.image.blit(self.textSurface, (80, 15))
+        self.image.blit(self.textSurface, (100, 23))
 
         # This attribute is needed to pass the value to windowGroup
         self.windowGroup = windowGroup
 
     def Clicked(self):
         self.windowGroup.empty()
-        MenuButton2(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
+        LoadButton(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
 
-class MenuButton3(pygame.sprite.Sprite):
+class QuitButton(pygame.sprite.Sprite):
         def __init__(self, group=None, windowGroup=None):
             pygame.sprite.Sprite.__init__(self, group)
-            self.image = pygame.image.load(os.path.join(imgFolder, "LoadButton.png")).convert()
+            self.image = pygame.image.load(os.path.join(imgFolder, "Button.png")).convert()
             self.rect = self.image.get_rect()
-            self.rect = (500, 510, 100, 50)
+            self.rect = (500, 550, 100, 50)
 
-            self.text = ""
+            self.text = "QUIT"
             self.font = pygame.font.SysFont(fontName, fontSize)
             self.textSurface = self.font.render(self.text, False, (0, 0, 0))
 
-            self.image.blit(self.textSurface, (80, 15))
+            self.image.blit(self.textSurface, (100, 23))
 
             # This attribute is needed to pass the value to windowGroup
             self.windowGroup = windowGroup
 
         def Clicked(self):
             self.windowGroup.empty()
-            MenuButton3(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
+            QuitButton(self.windowGroup)  # The value passed here, the FinanceWindow will instantiate under windowGroup.
 
 
+#class LogoTitle(pygame.sprite.Sprite):
+#    def __init__(self, group=None, windowGroup=None):
+ #       pygame.sprite.Sprite.__init__(self, group)
+  #      self.image = pygame.image.load(os.path.join(imgFolder, "RT.png")).convert()
+   #     self.rect = self.image.get_rect()
+    #    self.rect = (500, 0, 100, 50)
 
+     #   self.text = ""
+      #  self.font = pygame.font.SysFont(fontName, fontSize)
+       # self.textSurface = self.font.render(self.text, False, (0, 0, 0))
 
+        #self.image.blit(self.textSurface, (100, 23))
+
+        # This attribute is needed to pass the value to windowGroup
+        #self.windowGroup = windowGroup
 
 
 class View:
@@ -109,9 +122,10 @@ class View:
 
         #All sprite start from here.
         #Sprite will carry it group from here.
-        self.menuButton1 = MenuButton1(self.mainUI)
-        self.menuButton2 = MenuButton2(self.mainUI)
-        self.menuButton3 = MenuButton3(self.mainUI)
+        self.startButton = StartButton(self.mainUI)
+        self.loadButton = LoadButton(self.mainUI)
+        self.quitButton = QuitButton(self.mainUI)
+        #self.logoTitle = LogoTitle(self.mainUI)
 
 
 

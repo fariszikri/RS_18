@@ -1,21 +1,21 @@
 [Social Media]
 name = Social Media
 modifier = 0.05
-tier = 1
 cost = 100
+tier = 1
 duration = 0
 
 [Banners and Posters ]
 name = Banners and Posters
-modifier = 0.03
-tier = 1
 cost = 250
+modifier = 0.01
+tier = 1
 duration = 0
 
 [Special Promotions]
 name = Special Promotions
 modifier = 0.06
-tier = 1
+tier = 2
 cost = 50
 duration = 0
 
@@ -31,14 +31,14 @@ duration = 30
 [Loyalty Programs]
 name = Loyalty Programs
 modifier = 0.08
-tier = 2
+tier = 3
 cost = 150
 duration = 30
 
 [Trendy Decorations]
 name = Trendy Decorations
 modifier = 0.1
-tier = 2
+tier = 3
 cost = 400
 duration = 30
 
